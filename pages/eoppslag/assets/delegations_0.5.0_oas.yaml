@@ -319,16 +319,18 @@ paths:
                             schema:
                                 $ref: '#/components/schemas/Error'
                 '403':
-                    description: Ikke tilgang til å oppdatere oppgitt delegeringsoppsett.
+                    description: Ikke tilgang til å oppdatere oppgitt delegeringsoppsett, eller ett eller flere av oppgitte scopes
+                '404':
+                    description: Delegeringsoppsett ikke funnet
         post:
             summary: Legg til nytt scope til delegeringsoppsett
             responses:
-                '204':
+                '201':
                     description: Scope lagt til delegeringsoppsett
                 '400':
                     description: Ugyldig scope
                 '403':
-                    description: Ikke tilgang til å hente oppgitt delegeringsoppsett.
+                    description: Ikke tilgang til å oppdatere oppgitt delegeringsoppsett, eller legge til oppgitt scope
                 '404':
                     description: Delegeringsoppsett ikke funnet
                 '409':
